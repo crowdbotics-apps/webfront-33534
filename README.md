@@ -1,62 +1,34 @@
-### Getting Started In Development
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-First, duplicate the included `.env.example` file and rename it to `.env`
-Generate or rename the secret key and then proceed with the terminal commands.
+## Getting Started
 
-In your terminal run the following:
+First, run the development server:
 
-```shell
-#on first run:
-npm install
-#also on first run
-#if it doesn't work run:
-# sudo npm install -g foreman
-npm install -g foreman
-#if it doesn't work run:
-# sudo npm install -g sequelize-cli
-npm install -g sequelize-cli
-#open the postgresql.app first
-psql -f failsafe.sql
-#if you're on Mac OS X, run following
-psql postgres -f failsafe.sql
-#every other run after:
-#open the postgresql.app
-npm start
+```bash
+npm run dev
+# or
+yarn dev
 ```
 
-Visit `localhost:5000` in your browser.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-To get to the console (like `rails c`):
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-```
-npm run c
-```
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-In the boilerplate, you can query the value of the counter model's count value and log it
-using the following example within the console:
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-```javascript
-db.counter.findById(1).then(function(counter){console.log(counter.count)})
-```
+## Learn More
 
-### Heroku Deployment
+To learn more about Next.js, take a look at the following resources:
 
-In your terminal run the following:
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-```shell
-#on first run:
-heroku create MY_APP && heroku addons:add heroku-postgresql
-heroku plugins:install heroku-config
-#every other run:
-git push heroku master
-#or a non master branch:
-git push heroku branchname:master
-#if you make changes to your env file
-heroku config:push
-```
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-### Sass/Scss Setup
+## Deploy on Vercel
 
-The `application.scss` file is available in `client/stylesheets/application.scss`.
-Feel free to alter this file or `@import` additional `sass/scss` files from the
-`stylesheets` folder.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
