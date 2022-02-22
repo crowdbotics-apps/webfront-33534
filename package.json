@@ -6,7 +6,7 @@
     "dev": "nodemon",
     "build": "next build && tsc --project tsconfig.server.json",
     "buildWin": "next build && tsc --project tsconfig.server.json && yarn buildWin:api-docs",
-    "start": "cross-env NODE_ENV=production node dist/server/index.js",
+    "start": "cross-env NODE_ENV=production node .dist/server/index.js",
     "lint": "eslint --ext .tsx,.ts src/",
     "prettify": "prettier --write '**/*.js'"
   },
