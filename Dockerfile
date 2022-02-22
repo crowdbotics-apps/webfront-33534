@@ -6,8 +6,8 @@ RUN apk add --no-cache --update   bash   gcc   g++   make   python2   python2-de
 
 ADD ./ /app/webapp/
 WORKDIR /app/webapp/
-RUN yarn install
-RUN yarn build
+RUN npm install
+RUN npm build
 RUN adduser -D myuser
 USER myuser
 CMD ["npm", "start"]
