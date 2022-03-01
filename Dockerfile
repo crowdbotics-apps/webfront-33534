@@ -1,13 +1,10 @@
 
-FROM alpine:3.10
+FROM alpine:3.14
 
-# Install system dependencies
-RUN apk add --no-cache --update   bash   gcc   g++   make   python2   python2-dev   py2-pip   musl-dev   postgresql-dev   git   nodejs   nodejs-npm
-
-ADD ./ /app/webapp/
-WORKDIR /app/webapp/
-RUN npm install
-RUN npm build
-RUN adduser -D myuser
-USER myuser
-CMD ["npm", "start"]
+RUN apk add --no-cache --update libc6-compat  bash   gcc   g++   make   python2   python2-dev   musl-dev   postgresql-dev   git   nodejs npm
+RUN npm install -g yarn
+ADD ./ /src/
+WORKDIR /src/
+RUN yarn install --ignore-engines
+RUN yarn build
+CMD ["yarn", "start"]

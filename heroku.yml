@@ -1,4 +1,8 @@
-
 build:
   docker:
-    web: Dockerfile
+    web: ./Dockerfile
+  config:
+    DEBUG_COLLECTSTATIC: 1
+    SECRET_KEY: build
+release:
+  image: web
